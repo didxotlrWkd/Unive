@@ -1,0 +1,8 @@
+.env
+node_modules/
+migrations/
+config/
+*.json
+seeders/
+uploads/
+*.log
