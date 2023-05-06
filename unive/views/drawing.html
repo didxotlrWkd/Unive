@@ -1,0 +1,24 @@
+{% extends 'layout.html' %} 
+
+{% block content %}
+<div class="timeline">
+    <form action="/post/drawing" id="drawing" method="post">
+        <label for="option">갯수를 선택하세요:</label>
+        <select id="option" name="drawing">
+          <option value="1">1개(1000원)</option>
+          <option value="3">3개(3000원)</option>
+          <option value="5">5개(5000원)</option>
+          <option value="10">10개(10000원)</option>
+        </select>
+        <button id="drawing-btn" class="btn" type="submit">뽑기</button>
+    </form>
+    </form>
+</div>
+  <script>
+    window.onload = () => {
+      if (new URL(location.href).searchParams.get('drawingError')) {
+        alert(new URL(location.href).searchParams.get('drawingError'));
+      }
+    };
+  </script>
+{% endblock %}

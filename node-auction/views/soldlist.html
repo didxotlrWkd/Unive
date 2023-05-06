@@ -1,0 +1,58 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+  <div class="timeline">
+    <h2>판매 목록</h2>
+    <table id="good-list">
+      <tr>
+        <th>상품명</th>
+        <th>사진</th>
+        <th>시작가</th>
+        <th>낙찰가</th>
+        <th>낙찰자</th>
+        <th>판매 현황</th>
+      </tr>
+      {% for good in goods %}
+        <tr>
+          <td>{{good.name}}</td>
+          <td>
+            <img src="/img/{{good.img}}">
+          </td>
+          <td>{{good.price}}</td>
+          <td>{{good.Auctions[0].bid}}</td>
+          <td>{{good.Auctions[0].UserId}}</td>
+            {% if good.timeover %}
+              {% if good.sold %}
+                {% if good.paid %}
+                <td class="gettedbid" >지급됨</td>
+                {% else %}
+                <td>
+                <button class="getbid" data-bid="{{good.Auctions[0].bid}}" data-id="{{good.id}}">판매금 받기</button>
+                </td>
+                {% endif %}
+              {% else %} 
+                <td>판매되지 않았습니다.</td>
+              {% endif %}
+            {% else %}
+            <td>판매중입니다.</td>
+            {% endif %}
+        </tr>
+      {% endfor %}
+    </table>
+  </div>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script>
+    document.querySelectorAll('.getbid').forEach(function(tag) {
+      tag.addEventListener('click', function() {
+          axios.post(`/soldlist/${tag.dataset.id}/${tag.dataset.bid}`)
+               .then(() => {
+                  location.reload();
+                })
+               .catch((err) => {
+                console.error(err);
+               });      
+          }
+        ); 
+    });
+  </script>
+{% endblock %}

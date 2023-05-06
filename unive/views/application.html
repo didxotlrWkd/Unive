@@ -1,0 +1,24 @@
+{% extends 'layout.html' %} 
+
+{% block content %}
+<div class="timeline">
+    <form action="/post/application" id="application" method="post">
+      <div class="input-group">
+        <label for="application-mbti">MBTI</label>
+        <input type="mbti" id="application-mbti" name="mbti">
+      </div>
+      <div class="input-group">
+        <label for="kakaoId">카카오톡 ID</label>
+        <input type="kakaoId" id="application-kakaoId" name="kakaoId" required>
+      </div>
+      <button id="application-btn" class="btn" type="submit">신청하기</button>
+    </form>
+  </div>
+  <script>
+    window.onload = () => {
+      if (new URL(location.href).searchParams.get('applicationError')) {
+        alert(new URL(location.href).searchParams.get('applicationError'));
+      }
+    };
+  </script>
+{% endblock %}

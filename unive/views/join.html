@@ -1,0 +1,54 @@
+<head>
+  <meta charset="UTF-8">
+  <title>{{title}}</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="/join.css">
+</head>
+  <div class="timeline">
+    <form action="/auth/join" id="join-form" method="post">
+      <div class="input-group">
+        <label for="join-email">이메일</label>
+        <input type="email" id="join-email" name="email" required autofocus>
+      </div>
+      <div class="input-group">
+        <label for="join-password">비밀번호</label>
+        <input type="password" id="join-password" name="password" required>
+      </div>
+      <div class="input-group">
+        <label for="join-nick">닉네임</label>
+        <input type="nick" id="join-nick" name="nick" required>
+      </div>
+      <div class="input-group">
+        <label for="join-name">이름</label>
+        <input type="name" id="join-name" name="name" required>
+      </div>
+      <div class="input-group">
+        <label for="join-school">학교</label>
+        <input type="school" id="join-shcool" name="school" required>
+      </div>
+      <div class="input-group">
+        <label for="join-department">학과</label>
+        <input type="department" id="join-department" name="department" required>
+      </div>
+      <div class="input-group">
+        <label for="join-studentId">학번</label>
+        <input type="studentId" id="join-studentId" name="studentId" required>
+      </div>
+      <div class="input-group">
+        <label for="join-gender">성별</label>
+        <input type="radio" id="join-male" name="gender" value="male">
+        <label for="male">남성</label>
+        <input type="radio" id="join-female" name="gender" value="female">
+        <label for="female">여성</label>
+      </div>
+      <button id="join-btn" class="btn" type="submit">회원가입</button>
+    </form>
+  </div>
+  <script>
+    window.onload = () => {
+      if (new URL(location.href).searchParams.get('joinError')) {
+        alert(new URL(location.href).searchParams.get('joinError'));
+      }
+    };
+  </script>

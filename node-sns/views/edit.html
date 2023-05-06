@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+
+{% block editprofile %} 
+<div class="edit-profile">
+    <form id="edit-form" action="/user/edit" method="post">
+      <div class="input-group">
+        <label for="edit-nick">닉네임</label>
+        <input id="edit-nick" type="text" name="nick"></div>
+        <button id="edit-btn" type="submit" class="btn">수정</button>
+    </form>
+</div>
+{% endblock %}

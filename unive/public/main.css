@@ -1,0 +1,128 @@
+.container {
+  margin: auto;
+  max-width: 800px;
+  padding: 1rem;
+}
+
+.profile-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+}
+
+.user-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-right: 1rem;
+}
+
+.input-group {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+input[type="email"],
+input[type="password"] {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f5f5f5;
+  color: #333;
+  text-decoration: none;
+  margin-right: 1rem;
+}
+
+.btn:hover {
+  background-color: #e6e6e6;
+}
+
+#apply-btn {
+  background-color: #007bff;
+  color: #fff;
+}
+
+#apply-btn:hover {
+  background-color: #0069d9;
+}
+
+#draw-btn {
+  background-color: #28a745;
+  color: #fff;
+}
+
+#draw-btn:hover {
+  background-color: #218838;
+}
+
+#result-btn:hover {
+  background-color: salmon;
+}
+
+#result-btn {
+  background: salmon;
+  color: #fff;
+}
+
+/* 로그인 폼 */
+.login-form {
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background: #fff;
+}
+
+/* 로그인 폼의 제목 */
+.login-form h2 {
+  margin-top: 0;
+  font-size: 28px;
+  text-align: center;
+}
+
+/* 로그인 폼의 입력 필드 */
+.login-form input[type="text"],
+.login-form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* 로그인 폼의 로그인 버튼 */
+.login-form button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* 로그인 폼의 에러 메시지 */
+.login-form .error-message {
+  color: red;
+  margin-top: 10px;
+  text-align: center;
+}
+
